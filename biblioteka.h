@@ -6,23 +6,21 @@ using namespace std;
 
 class Biblioteka{
 public:
-
   	string autor;
 	string kategoria;
-	string status;
 	int lstron;
+	string status;
 
-	Biblioteka(string new_autor="Nie podano", string new_kategoria="Nie podano", int new_lstron=0, string new_status="Nie podano")
-	{
+	Biblioteka(string new_autor="NULL", string new_kategoria="NULL", int new_lstron=0, string new_status="NULL"){
 		autor=new_autor;
 		kategoria=new_kategoria;
 		status=new_status;
 		lstron=new_lstron;
 	}
+
 	~Biblioteka() { };
-	friend ostream& operator << (ostream& o, const Biblioteka& e)
-	{
+	friend ostream& operator << (ostream& o, const Biblioteka& e){
            return o << e.autor << ' ' << e.kategoria << ' ' << e.lstron << ' ' << e.status;
 	}
 };
-# endif /* emplyee.h */
+# endif /* biblioteka.h */
