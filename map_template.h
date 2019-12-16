@@ -17,8 +17,8 @@ class map_template{
         map_template(): head(NULL) { }
 
         map_template (const map_template & l){
-            node * p1 = 0; //aktualny
-            node * p2 = 0; //nastepny
+            node * p1 = 0; 
+            node * p2 = 0; 
 
             if( l.head == 0 ){
                 head = 0;
@@ -55,7 +55,7 @@ class map_template{
             return *this;
         }
 
-        ~map_template(){ //destruktor listy
+        ~map_template(){ 
             while(head){
                 node* tmp = head;
                 head = head -> next;
@@ -64,21 +64,17 @@ class map_template{
         }
 
         void Add(key klucz_nowy, data dane_nowy){
-            node* wezel = new node;
+          node* wezel = new node;
 
             wezel->klucz=klucz_nowy;
             wezel->dane=dane_nowy;
 
             wezel->next=head;
-            head=wezel;
+            head=wezel;  
         }
 
         data* Find(key klucz_szukaj){
-            for(node* i=head; i!=NULL; i=i->next){
-                if(klucz_szukaj==i->klucz){
-                    return &(i->dane);
-                }
-            }
+           
             return 0;
         }
 
